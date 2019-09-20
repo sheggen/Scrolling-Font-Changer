@@ -1,27 +1,38 @@
-lastResult = "";
+lastWords = "";
 selectedFont = "Arial";
 
 function getWords() {
-	console.log("Calling getWords")
+	//console.log("Calling getWords")
 	$.ajax({
 		url: "getWords",
-		success: function (result) {			
-			font = result.split("||")[0];
-			words = result.split("||")[1].replace(/\n/g, " ");
-			console.log(font);
+		success: function (result) {
+			mute = result.split("||")[0];
+			font = result.split("||")[1];
+			words = result.split("||")[2].replace(/\n/g, " ");
+			//console.log(mute);
 			//console.log(result);
-			if (lastResult == result) {
-				console.log("Text is the same");
-			} else {
+			
+			// Mute display, or not
+			if (mute == 'true') {
+				//console.log("Muting display");
+				$(".marquee").fadeOut(1000);
+			} else if (mute == 'false') {
+				//console.log("Unmuting display");
+				$(".marquee").fadeIn(1000);
+			}
+				
+			// Check if text changed, update if so
+			if (lastWords != words) {
 				console.log("Text changed");
 				add_marquee(font, words);
 			}
-			lastResult = result;
+			lastWords = words;
 			$(".marquee").css("font-family", font);
-			setTimeout(getWords, 10*1000);
+			setTimeout(getWords, 3*1000);
 		}
 	});
 };
+
 
 function add_marquee(selectedFont, words) {
 	fontsize = 20 + Math.random()*8;
@@ -55,12 +66,11 @@ function add_marquee(selectedFont, words) {
 		
 function add_text(words, area) {
 	area.find(".marquee").fadeOut(1000, function () {			
-			area.find(".marquee").text(words);
-			area.find(".marquee").fadeIn(1000);
-			
-		});
+		area.find(".marquee").text(words);
+		area.find(".marquee").fadeIn(1000);			
+	});
 		//console.log(area.find(".marquee"));
-	}	
+}
 
 
 var first = true;

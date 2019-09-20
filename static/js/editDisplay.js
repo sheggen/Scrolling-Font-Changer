@@ -31,3 +31,12 @@ function sendFont(el) {
 		}
 	})
 }
+
+function muteDisplay() {
+        $.ajax({
+		url: "muteDisplay",
+		success: function(result) {
+			console.log("We "+result+"ed it!");
+		}
+	})
+}

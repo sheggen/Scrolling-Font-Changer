@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
+import threading, time
+
 app = Flask(__name__)
 
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
 @app.route('/')
-def hello_world():
+def mainRoute():
 	return render_template("main.html")
 
 
@@ -16,14 +18,19 @@ def editDisplay():
 
 @app.route('/getWords')
 def getWords():
+	f = open('currentFont.txt', 'r')
+	font = f.readline()
+	# print(font)
+	f.close()
+	
 	f = open('words.txt', 'r')
 	words = f.read()
 	f.close()
-	f = open('currentFont.txt', 'r')
-	font = f.readline()
-	print(font)
+	
+	f = open('muteDisplay.txt', 'r')
+	muter = f.read()
 	f.close()
-	return font + "||" + words
+	return muter + "||" + font + "||" + words
 
 @app.route('/vetWords')
 def vetWords():
@@ -86,3 +93,23 @@ def sendFont(font):
 	f.write(font)
 	f.close()
 	return font
+
+
+def updateMuteState():
+	states = {"true": "false",
+						"false": "true",
+						"": "true"}
+	f = open('muteDisplay.txt', 'r')
+	currentState = f.read()
+	f = open('muteDisplay.txt', 'w')
+	f.write(states[currentState])
+	f.close()
+
+@app.route('/muteDisplay')
+def muteDisplay():
+	updateMuteState()
+	threading.Timer(20.0, updateMuteState).start()
+	f = open('muteDisplay.txt', 'r')
+	currentState = f.read()
+	f.close()
+	return currentState
