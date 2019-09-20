@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+ 	<meta http-equiv="refresh" content="10" />
+        <title>Approved Words</title>
+        <script src="static/js/jquery.js"></script>
+	<script src="static/js/vetWords.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/css/andika.css">
+	<link rel="stylesheet" type="text/css" href="static/css/canada1500.css">
+</head>
+<body>
+<div style="width: 100%;">
+<form id="theForm" action="removeWord" method="POST">
+<h2>Pending Approval</h2> 
+{% for word in words -%}
+	{% if word|length > 2 %}	  
+		<div style="max-width: 20%;">
+			<button type="button" onclick="approve(this);" value="{{word}}" style='margin-left: 20px; background-color: green; color: white; height: 42px; border-radius: 5px;padding: 10px 15px 10px 15px; font-size: 16px;'>Add</button>
+ 	  		<button type="submit" name="word" value="{{word[:-1]}}" style='background-color: red; color: white;height: 42px; border-radius: 5px; padding: 10px 15px 10px 15px; font-size: 16px;'>Remove</button>
+		</div>
+		<div style="max-width: 80%">
+			<span style='font-size: 22px; margin-right: 40px; margin-left: 40px; display: inline-block;'>{{word[:-1]}}</span> 
+		</div>
+	  <br /><hr style="margin-left:40px;"/>
+	{% endif %}
+{%- endfor %}
+</form>
+<br />
+<h2>Approved Words </h2>
+{% for word in vettedWords%}
+	<p style="margin: 0px 0px 0px 8px;">{{word}}</p>
+	<hr style="margin-left: 8px;"/>
+{% endfor %}
+</div>
+
+</body>
