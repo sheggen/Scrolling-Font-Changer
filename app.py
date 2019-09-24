@@ -6,10 +6,13 @@ app = Flask(__name__)
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
-@app.route('/')
-def mainRoute():
-	return render_template("main.html")
+@app.route('/young')
+def young():
+	return render_template("main.html", age = "young")
 
+@app.route('/old')
+def old():
+	return render_template("main.html", age = "old")
 
 @app.route('/editDisplay')
 def editDisplay():

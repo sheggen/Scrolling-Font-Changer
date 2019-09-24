@@ -4,3 +4,8 @@ young: Imagination!:|:
 old: Grandpa:|:
 young: Brant Price:|:
 young: Grouch:|:
+young: Ready to work:|:
+young: smooth:|:
+young: classy:|:
+old: very classy:|:
+young: Dapper:|:

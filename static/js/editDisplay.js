@@ -40,3 +40,6 @@ function muteDisplay() {
 		}
 	})
 }
+
+// on document load, set the selected font to what's in the txt
+// on regular intervals, check the font and set it in this ui.
