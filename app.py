@@ -16,7 +16,10 @@ def old():
 
 @app.route('/editDisplay')
 def editDisplay():
-	return render_template("editDisplay.html")
+	f = open('currentFont.txt', 'r')
+	font = f.readline()
+	f.close()
+	return render_template("editDisplay.html", font = font)
 
 
 @app.route('/getWords')
@@ -94,6 +97,14 @@ def sendWord(age, word):
 def sendFont(font):
 	f = open('currentFont.txt', 'w')
 	f.write(font)
+	f.close()
+	return font
+
+@app.route('/getFont')
+def getFont():
+	f = open('currentFont.txt', 'r')
+	font = f.read()
+	print(font)
 	f.close()
 	return font
 

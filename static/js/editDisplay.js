@@ -20,7 +20,7 @@ function sendOldWord() {
         })
 };
 
-function sendFont(el) {        
+function sendFont(el) {
 	font = $(el).val();
         $("body").css("font-family", font);
 	console.log(font);
@@ -41,5 +41,19 @@ function muteDisplay() {
 	})
 }
 
+function refreshFont() {
+        $.ajax({
+		url: "getFont",
+		success: function(result) {
+			console.log("We did it dude!", result);
+                        // change selected font
+                        $("#fs").val(result).change();
+                        setTimeout(refreshFont, 1000);
+		}
+	})
+}
 // on document load, set the selected font to what's in the txt
 // on regular intervals, check the font and set it in this ui.
+$(document).ready(function () {
+        setTimeout(refreshFont, 1000);
+})

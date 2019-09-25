@@ -36,12 +36,12 @@
 	<label for="fs" style="font-size: 20px; padding-right: 10px;">Select a font: </label>
 
 	<select id="fs" onchange="sendFont(this)" style="height: 35px; font-size: 20px; margin-left: 58px; margin-top: 20px; width: 196px;">
-		<option value="Arial">Arial</option>
-		<option value="Verdana">Verdana</option>
-		<option value="Impact">Impact</option>
-		<option value="andika_new_basicregular">Andika</option>
-		<option value="Comic Sans MS">Comic Sans MS</option>
-		<option value="canada_1500regular">Canada 1500</option>
+		<option value="Arial" {% if font == "Arial" %}selected{% endif %}>Arial</option>
+		<option value="Verdana" {% if font == "Verdana" %}selected{% endif %}>Verdana</option>
+		<option value="Impact" {% if font == "Impact" %}selected{% endif %}>Impact</option>
+		<option value="andika_new_basicregular" {% if font == "andika_new_basicregular" %}selected{% endif %}>Andika</option>
+		<option value="Comic Sans MS" {% if font == "Comic Sans MS" %}selected{% endif %}>Comic Sans MS</option>
+		<option value="canada_1500regular" {% if font == "canada_1500regular" %}selected{% endif %}>Canada 1500</option>
 	</select>	
 </div>
 <div style="width: 100%;margin-top: 20px;" align="center">
