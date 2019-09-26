@@ -27,7 +27,7 @@ function sendFont(el) {
 	$.ajax({
 		url: "sendFont/"+font,
 		success: function(result) {
-			console.log("We did it!");
+			// console.log("We did it!");
 		}
 	})
 }
@@ -45,10 +45,14 @@ function refreshFont() {
         $.ajax({
 		url: "getFont",
 		success: function(result) {
-			console.log("We did it dude!", result);
+			// console.log("We did it dude!", result);
                         // change selected font
-                        $("#fs").val(result).change();
-                        setTimeout(refreshFont, 1000);
+                        if (result != "null") {
+                                $("#fs").val(result).change();
+                        } else {
+                                result = "Arial";
+                        }
+                        setTimeout(refreshFont, 3000);
 		}
 	})
 }

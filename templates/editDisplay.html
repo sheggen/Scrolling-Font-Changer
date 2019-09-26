@@ -36,6 +36,7 @@
 	<label for="fs" style="font-size: 20px; padding-right: 10px;">Select a font: </label>
 
 	<select id="fs" onchange="sendFont(this)" style="height: 35px; font-size: 20px; margin-left: 58px; margin-top: 20px; width: 196px;">
+		<option value="Times New Roman" {% if font == "Times New Roman" %}selected{% endif %}>Times New Roman</option>
 		<option value="Arial" {% if font == "Arial" %}selected{% endif %}>Arial</option>
 		<option value="Verdana" {% if font == "Verdana" %}selected{% endif %}>Verdana</option>
 		<option value="Impact" {% if font == "Impact" %}selected{% endif %}>Impact</option>

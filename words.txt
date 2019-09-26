@@ -9,3 +9,5 @@ young: smooth:|:
 young: classy:|:
 old: very classy:|:
 young: Dapper:|:
+old: Beardy:|:
+young: Beardless:|:
