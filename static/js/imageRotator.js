@@ -6,7 +6,14 @@ function refreshImage() {
 	img = imgs[count];
 	imgs.hide();
 	$(img).show();
-        setTimeout(refreshImage, 10000);
+	$.ajax({
+                url: "setImageRotator/"+ $(img).attr("src").split("/").pop(),
+                success: function (result) {
+                        console.log(result);
+        		setTimeout(refreshImage, 3000);
+                }
+        })
+
 
 };
 var count = 0;

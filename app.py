@@ -27,6 +27,30 @@ def imageRotator():
 	imgs = glob.glob("static/image_rotator/*.jpg")
 	return render_template('imageRotator.html', imgs = imgs)
 
+@app.route("/setImageRotator/<imgPath>")
+def setImageRotator(imgPath):
+	f = open("currentImageRotator.txt", "w")
+	f.write(imgPath)
+	f.close()
+	print(imgPath)
+	return "success"
+
+@app.route("/imageRotatorText")
+def imageRotatorText():
+	import json	
+	f = open("allImagesText.txt")
+	allLines = f.read()
+	f.close()
+	print(json.loads(allLines))
+	return render_template('imageRotatorText.html', allLines = json.loads(allLines))
+
+@app.route("/getImageRotatorText")
+def getImageRotatorText():
+	f = open("currentImageRotator.txt", 'r')
+	currentImg = f.read()
+	f.close()
+	return currentImg
+
 @app.route('/getWords')
 def getWords():
 	f = open('currentFont.txt', 'r')
