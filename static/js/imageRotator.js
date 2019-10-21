@@ -9,12 +9,10 @@ function refreshImage() {
 	$.ajax({
                 url: "setImageRotator/"+ $(img).attr("src").split("/").pop(),
                 success: function (result) {
-                        console.log(result);
+                        // console.log(result);
         		setTimeout(refreshImage, 3000);
                 }
         })
-
-
 };
 var count = 0;
 $(document).ready(function () {
