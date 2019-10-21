@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+	<title>Images</title>
+	<script src="static/js/jquery.js"></script>
+	<script src="static/js/imageRotator.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/css/andika.css">
+	<link rel="stylesheet" type="text/css" href="static/css/canada1500.css">
+
+	<style> 
+		.marquee {
+			text-align:justify;
+			word-wrap: normal;
+			font-size: 20px;
+			height: inherit;
+		}
+
+		#imgRotator {
+			max-width: 100%;
+			width: auto;
+			max-height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div style="width: 100%; height:100vh;" id="container">	
+		{% for img in imgs %}	
+			<img src="/{{img}}" class="imgRotator" style = "display: none;">
+		{% endfor %}
+
+{#		<div style="width:100%; float:left; overflow: hidden; padding-right: 200px; height: inherit;{% if age != "young" %}display: none;{% endif %}">
+			<div id="marquee_area_young" style='height: inherit;'>
+				<marquee id="marquee_text_young" class="marquee" behavior="scroll" direction="up" scrollamount="5" ></marquee>
+			</div>
+		</div>		
+		
+		<div style="width: 100%; margin-left: 50px; overflow: hidden; height: inherit;{% if age != "old" %}display: none;{% endif %}">
+			<div id="marquee_area_old" style='height: inherit;'>
+				<marquee id="marquee_text_old" class="marquee" behavior="scroll" direction="up" scrollamount="5" ></marquee>
+			</div>
+		</div>
+	</div>
+#}
+</div>
+</body>

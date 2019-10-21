@@ -21,6 +21,11 @@ def editDisplay():
 	f.close()
 	return render_template("editDisplay.html", font = font)
 
+@app.route("/imageRotator")
+def imageRotator():
+	import glob
+	imgs = glob.glob("static/image_rotator/*.jpg")
+	return render_template('imageRotator.html', imgs = imgs)
 
 @app.route('/getWords')
 def getWords():
