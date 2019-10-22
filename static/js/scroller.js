@@ -4,7 +4,7 @@ selectedFont = "Arial";
 function getWords() {
 	//console.log("Calling getWords")
 	$.ajax({
-		url: "getWords",
+		url: "/getWords",
 		success: function (result) {
 			mute = result.split("||")[0];
 			font = result.split("||")[1];
@@ -23,7 +23,7 @@ function getWords() {
 				
 			// Check if text changed, update if so
 			if (lastWords != words) {
-				console.log("Text changed");
+				//console.log("Text changed");
 				add_marquee(font, words);
 			}
 			lastWords = words;

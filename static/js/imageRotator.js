@@ -12,10 +12,11 @@ function refreshImage() {
                         // console.log(result);
         		setTimeout(refreshImage, 3000);
                 }
-        })
-};
+        });
+}
+
 var count = 0;
 $(document).ready(function () {
         setTimeout(refreshImage, 1);
-})
+});
 

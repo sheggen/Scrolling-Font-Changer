@@ -6,27 +6,74 @@ app = Flask(__name__)
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
-@app.route('/young')
-def young():
-	return render_template("main.html", age = "young")
+# PAGE ROUTES
+@app.route('/Fee/young')
+def FeeYoung():
+	return render_template("Fee.html", age = "young")
 
-@app.route('/old')
-def old():
-	return render_template("main.html", age = "old")
+@app.route('/Fee/old')
+def FeeOld():
+	return render_template("Fee.html", age = "old")
 
-@app.route('/editDisplay')
-def editDisplay():
+@app.route('/Fee/add')
+def FeeAdd():
 	f = open('currentFont.txt', 'r')
 	font = f.readline()
 	f.close()
-	return render_template("editDisplay.html", font = font)
+	return render_template("FeeAdd.html", font = font)
 
-@app.route("/imageRotator")
-def imageRotator():
+@app.route('/Fee')
+def Fee():
+	return render_template("FeeText.html")
+
+
+@app.route("/Stephenson")
+def Stephenson():
 	import glob
 	imgs = glob.glob("static/image_rotator/*.jpg")
-	return render_template('imageRotator.html', imgs = imgs)
+	return render_template('Stephenson.html', imgs = imgs)
 
+@app.route("/Stephenson/text")
+def imageRotatorText():
+	import json	
+	f = open("allImagesText.txt")
+	allLines = f.read()
+	f.close()
+	print(json.loads(allLines))
+	return render_template('StephensonText.html', allLines = json.loads(allLines))
+
+@app.route('/introduction')
+def introduction():
+	return render_template("introduction.html")
+
+@app.route('/Frost')
+def Frost():
+	return render_template("Frost.html")
+
+@app.route('/Stewart')
+def Stewart():
+	return render_template("Stewart.html")
+
+@app.route('/HutchShinFairWeather')
+def HutchShinFairWeather():
+	return render_template("HutchShinFairWeather.html")
+
+@app.route('/HutchShinFairWeather/video')
+def HutchShinFairWeatherVideo():
+	return render_template("HutchShinFairWeatherVideo.html")
+
+
+@app.route('/vetWords')
+def vetWords():
+	f = open('pendingWords.txt', 'r')
+	words = f.readlines()
+	print(words)
+	f.close()
+	f = open('words.txt', 'r')
+	vettedWords = f.readlines()
+	return render_template("vetWords.html", words = words, vettedWords = vettedWords)
+
+# AJAX ROUTES
 @app.route("/setImageRotator/<imgPath>")
 def setImageRotator(imgPath):
 	f = open("currentImageRotator.txt", "w")
@@ -35,14 +82,6 @@ def setImageRotator(imgPath):
 	print(imgPath)
 	return "success"
 
-@app.route("/imageRotatorText")
-def imageRotatorText():
-	import json	
-	f = open("allImagesText.txt")
-	allLines = f.read()
-	f.close()
-	print(json.loads(allLines))
-	return render_template('imageRotatorText.html', allLines = json.loads(allLines))
 
 @app.route("/getImageRotatorText")
 def getImageRotatorText():
@@ -67,15 +106,7 @@ def getWords():
 	f.close()
 	return muter + "||" + font + "||" + words
 
-@app.route('/vetWords')
-def vetWords():
-	f = open('pendingWords.txt', 'r')
-	words = f.readlines()
-	print(words)
-	f.close()
-	f = open('words.txt', 'r')
-	vettedWords = f.readlines()
-	return render_template("vetWords.html", words = words, vettedWords = vettedWords)  
+
 
 @app.route('/approve/<word>')
 def approve(word):

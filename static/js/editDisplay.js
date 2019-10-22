@@ -1,7 +1,7 @@
 function sendYoungWord() {
         word = $("#youngFeeling").val();
         $.ajax({
-                url: "sendWord/young/"+ word,
+                url: "/sendWord/young/"+ word,
                 success: function (result) {
                         console.log(result);
                         $("#youngFeeling").val('');
@@ -12,7 +12,7 @@ function sendYoungWord() {
 function sendOldWord() {
         word = $("#oldFeeling").val();
         $.ajax({
-                url: "sendWord/old/"+ word,
+                url: "/sendWord/old/"+ word,
                 success: function (result) {
                         //console.log(result);
                         $("#oldFeeling").val('');
@@ -25,7 +25,7 @@ function sendFont(el) {
         $("body").css("font-family", font);
 	console.log(font);
 	$.ajax({
-		url: "sendFont/"+font,
+		url: "/sendFont/"+font,
 		success: function(result) {
 			// console.log("We did it!");
 		}
@@ -34,16 +34,16 @@ function sendFont(el) {
 
 function muteDisplay() {
         $.ajax({
-		url: "muteDisplay",
+		url: "/muteDisplay",
 		success: function(result) {
 			console.log("We "+result+"ed it!");
 		}
 	})
 }
 
-function refreshFont() {
+function refreshFontFS() {
         $.ajax({
-		url: "getFont",
+		url: "/getFont",
 		success: function(result) {
 			// console.log("We did it dude!", result);
                         // change selected font
@@ -52,12 +52,12 @@ function refreshFont() {
                         } else {
                                 result = "Arial";
                         }
-                        setTimeout(refreshFont, 3000);
+                        setTimeout(refreshFontFS, 3000);
 		}
 	})
 }
 // on document load, set the selected font to what's in the txt
 // on regular intervals, check the font and set it in this ui.
 $(document).ready(function () {
-        setTimeout(refreshFont, 1000);
+        setTimeout(refreshFontFS, 1000);
 })

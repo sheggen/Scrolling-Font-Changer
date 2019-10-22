@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+	<title>Hutchins, Shin, Fairchild, Weatherford</title>
+	<script src="/static/js/jquery.js"></script>
+	<script src="/static/js/getFonts.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
+	<style>
+		img {
+			position:relative;
+			z-index:0;
+		}
+		
+		.overlay {
+			position:absolute;
+			top:140px;
+			left:0;
+			z-index:1;
+			margin: auto;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div style="margin: auto; width: 100%; height:100vh; padding: 10px; text-align: center;">		
+		<div class="container">
+		<img src = "/static/image_rotator/1.jpg">
+    <div class="overlay">
+        <h3>Content above your video</h3>
+    </div>
+</div>
+	</div>		
+</body>
+
+<script>
+		setTimeout(refreshFont, 1);
+</script>
