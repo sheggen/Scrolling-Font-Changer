@@ -93,8 +93,8 @@
 
 @font-face {
     font-family: 'highway_gothic_condensedRg';
-    src: url('hwygcond-webfont.woff2') format('woff2'),
-         url('hwygcond-webfont.woff') format('woff');
+    src: url('/static/fonts/hwygcond-webfont.woff2') format('woff2'),
+         url('/static/fonts/hwygcond-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -105,8 +105,8 @@
 
 @font-face {
     font-family: 'highway_gothic_expandedRg';
-    src: url('hwygexpd-webfont.woff2') format('woff2'),
-         url('hwygexpd-webfont.woff') format('woff');
+    src: url('/static/fonts/hwygexpd-webfont.woff2') format('woff2'),
+         url('/static/fonts/hwygexpd-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -117,8 +117,8 @@
 
 @font-face {
     font-family: 'highway_gothic_narrowregular';
-    src: url('hwygnrrw-webfont.woff2') format('woff2'),
-         url('hwygnrrw-webfont.woff') format('woff');
+    src: url('/static/fonts/hwygnrrw-webfont.woff2') format('woff2'),
+         url('/static/fonts/hwygnrrw-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -129,8 +129,8 @@
 
 @font-face {
     font-family: 'highway_gothicregular';
-    src: url('hwygoth-webfont.woff2') format('woff2'),
-         url('hwygoth-webfont.woff') format('woff');
+    src: url('/static/fonts/hwygoth-webfont.woff2') format('woff2'),
+         url('/static/fonts/hwygoth-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -141,8 +141,8 @@
 
 @font-face {
     font-family: 'opendyslexicbold';
-    src: url('opendyslexic-bold-webfont.woff2') format('woff2'),
-         url('opendyslexic-bold-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexic-bold-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexic-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -153,8 +153,8 @@
 
 @font-face {
     font-family: 'opendyslexicbold_italic';
-    src: url('opendyslexic-bolditalic-webfont.woff2') format('woff2'),
-         url('opendyslexic-bolditalic-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexic-bolditalic-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexic-bolditalic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -165,8 +165,8 @@
 
 @font-face {
     font-family: 'opendyslexicitalic';
-    src: url('opendyslexic-italic-webfont.woff2') format('woff2'),
-         url('opendyslexic-italic-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexic-italic-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexic-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -177,8 +177,8 @@
 
 @font-face {
     font-family: 'opendyslexicregular';
-    src: url('opendyslexic-regular-webfont.woff2') format('woff2'),
-         url('opendyslexic-regular-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexic-regular-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexic-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -189,8 +189,8 @@
 
 @font-face {
     font-family: 'opendyslexicaltabold';
-    src: url('opendyslexicalta-bold-webfont.woff2') format('woff2'),
-         url('opendyslexicalta-bold-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexicalta-bold-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexicalta-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -201,8 +201,8 @@
 
 @font-face {
     font-family: 'opendyslexicaltabold_italic';
-    src: url('opendyslexicalta-bolditalic-webfont.woff2') format('woff2'),
-         url('opendyslexicalta-bolditalic-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexicalta-bolditalic-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexicalta-bolditalic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -213,8 +213,8 @@
 
 @font-face {
     font-family: 'opendyslexicaltaitalic';
-    src: url('opendyslexicalta-italic-webfont.woff2') format('woff2'),
-         url('opendyslexicalta-italic-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexicalta-italic-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexicalta-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -225,8 +225,8 @@
 
 @font-face {
     font-family: 'opendyslexicaltaregular';
-    src: url('opendyslexicalta-regular-webfont.woff2') format('woff2'),
-         url('opendyslexicalta-regular-webfont.woff') format('woff');
+    src: url('/static/fonts/opendyslexicalta-regular-webfont.woff2') format('woff2'),
+         url('/static/fonts/opendyslexicalta-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -238,8 +238,8 @@
 
 @font-face {
     font-family: 'chicagoflfregular';
-    src: url('chicagoflf-webfont.woff2') format('woff2'),
-         url('chicagoflf-webfont.woff') format('woff');
+    src: url('/static/fonts/chicagoflf-webfont.woff2') format('woff2'),
+         url('/static/fonts/chicagoflf-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -250,8 +250,8 @@
 
 @font-face {
     font-family: 'fee_40regular';
-    src: url('fee40-regular-webfont.woff2') format('woff2'),
-         url('fee40-regular-webfont.woff') format('woff');
+    src: url('/static/fonts/fee40-regular-webfont.woff2') format('woff2'),
+         url('/static/fonts/fee40-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -262,8 +262,8 @@
 
 @font-face {
     font-family: 'fee_numbers_30regular';
-    src: url('feenumbers30-regular-webfont.woff2') format('woff2'),
-         url('feenumbers30-regular-webfont.woff') format('woff');
+    src: url('/static/fonts/feenumbers30-regular-webfont.woff2') format('woff2'),
+         url('/static/fonts/feenumbers30-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -274,9 +274,10 @@
 
 @font-face {
     font-family: 'john_g_feeregular';
-    src: url('johngfee-regular-webfont.woff2') format('woff2'),
-         url('johngfee-regular-webfont.woff') format('woff');
+    src: url('/static/fonts/johngfee-regular-webfont.woff2') format('woff2'),
+         url('/static/fonts/johngfee-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
+
+
