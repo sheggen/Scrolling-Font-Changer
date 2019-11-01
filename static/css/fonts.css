@@ -280,4 +280,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Garamond';
+    src: url('/static/fonts/Garamond.ttf') format('truetype'),
+    	 url('/static/fonts/Garamonb.ttf') format('truetype'),
+	 url('/static/fonts/Garamoni.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 

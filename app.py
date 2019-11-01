@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
-@app.route('Period')
+@app.route('/Period')
 def Period():
     return render_template("Period.html")
 
