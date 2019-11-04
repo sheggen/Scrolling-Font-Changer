@@ -12,8 +12,9 @@
 	</style>
 </head>
 <body>
-<div style="height: 50px;"></div>
+<!--<div style="height: 50px;"></div>-->
 <div style="margin: auto; width: 1000px;" align="center">
+	<p>We are often positioned to imagine that the representation of an individual in a portrait is not a momentary snapshot of that person, but instead a rendering that captures both their essence and how they should be remembered. However, older or younger, formally dressed versus informal, surrounded by objects or in front of a barren wall, all these features impact the ways we relate to the portraits themselves. The portrait of Fee on the right was painted during his lifetime while the one on the left was painted 14 years after his death. Use the touch screen mounted here or another device to share your impressions of these two different portraits of Fee. Come back later to see all relevant comments added to the list. </p>
 	<div style="width: 50%; float:left; overflow: hidden;">
 		<div style="width: 100%; margin-bottom: 20px;" align = 'center'>
 			<img src="/static/images/youngfee.jpeg" width = 300px style="clear:both;"/>
@@ -53,32 +54,37 @@
 		</button>
 	</div>
 </div>
-<div style="width: 100%;" align="center">
-	<label for="fs" style="font-size: 20px; padding-right: 10px;">Select a font: </label>
+<div style="margin: auto; width: 1000px;" align="center">
 
-	<select id="fs" onchange="sendFont(this)" style="height: 35px; font-size: 20px; margin-left: 58px; margin-top: 20px; width: 196px;">
-		<option value="Helvetica" {% if font == "Helvetica" %}selected{% endif %}>Helvetica</option>
-		<option value="Times New Roman" {% if font == "Times New Roman" %}selected{% endif %}>Times New Roman</option>
-		<option value="Arial" {% if font == "Arial" %}selected{% endif %}>Arial</option>
-		<option value="Verdana" {% if font == "Verdana" %}selected{% endif %}>Verdana</option>
-		<option value="Impact" {% if font == "Impact" %}selected{% endif %}>Impact</option>
-		<option value="andika_new_basicregular" {% if font == "andika_new_basicregular" %}selected{% endif %}>Andika</option>
-		<option value="Comic Sans MS" {% if font == "Comic Sans MS" %}selected{% endif %}>Comic Sans MS</option>
-		<option value="canada_1500regular" {% if font == "canada_1500regular" %}selected{% endif %}>Canada 1500</option>
-	</select>	
+	<p>The typeface that you are reading is also left to the viewers discretion. Typography often goes overlooked as we typically employ typefaces determined by academic standards or word processing default settings–where many of the most common typefaces are easily adaptable to Western languages, but less so indigenous and non-Latin alphabet languages, and readers of differing visual processing ability. It is itself a curatorial decision that may impact the ways we relate to the content of the type. Through this interface you can choose the typeface that is being viewed in this proposal from a range of typefaces that include ones that are prevalent to designs intended to address specific deficits in the more widely used typefaces. In addition, upon making your choice, all of the digital text throughout the exhibition will adapt to your selected typeface. The printed text in the exhibition uses the Andika font.</p>
+	<div style="width: 100%;" align="center">
+		<label for="fs" style="font-size: 20px; padding-right: 10px;">Select a font: </label>
+	
+		<select id="fs" onchange="sendFont(this)" style="height: 35px; font-size: 20px; margin-left: 58px; margin-top: 20px; width: 196px;">
+			<option value="Helvetica" {% if font == "Helvetica" %}selected{% endif %}>Helvetica</option>
+			<option value="Times New Roman" {% if font == "Times New Roman" %}selected{% endif %}>Times New Roman</option>
+			<option value="Arial" {% if font == "Arial" %}selected{% endif %}>Arial</option>
+			<option value="Verdana" {% if font == "Verdana" %}selected{% endif %}>Verdana</option>
+			<option value="Impact" {% if font == "Impact" %}selected{% endif %}>Impact</option>
+			<option value="andika_new_basicregular" {% if font == "andika_new_basicregular" %}selected{% endif %}>Andika</option>
+			<option value="Comic Sans MS" {% if font == "Comic Sans MS" %}selected{% endif %}>Comic Sans MS</option>
+			<option value="canada_1500regular" {% if font == "canada_1500regular" %}selected{% endif %}>Canada 1500</option>
+		</select>	
+	</div>
+	<div style="width: 100%;margin-top: 20px;" align="center">
+		<button id="muteButton"
+						type="button"
+						onclick="muteDisplay()"
+						style="background-color: #4CAF50;
+										color: #ffffff;
+										border-color: #4CAF50;
+										height: 40px;
+										border-radius: 7px;
+										vertical-align: top;
+										font-size: 15px;
+										font-family: inherit;">
+			Toggle the Display
+		</button>
+	</div>
 </div>
-<div style="width: 100%;margin-top: 20px;" align="center">
-	<button id="muteButton"
-					type="button"
-					onclick="muteDisplay()"
-					style="background-color: #4CAF50;
-									color: #ffffff;
-									border-color: #4CAF50;
-									height: 40px;
-									border-radius: 7px;
-									vertical-align: top;
-									font-size: 15px;
-									font-family: inherit;">
-		Toggle the Display
-	</button>
-</div>
+	

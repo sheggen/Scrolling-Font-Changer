@@ -22,9 +22,13 @@ def FeeAdd():
 	f.close()
 	return render_template("FeeAdd.html", font = font)
 
-@app.route('/Fee')
-def Fee():
-	return render_template("FeeText.html")
+@app.route('/Fee/text/old')
+def FeeTextOld():
+	return render_template("FeeTextOld.html")
+
+@app.route('/Fee/text/young')
+def FeeTextYoung():
+	return render_template("FeeTextYoung.html")
 
 
 @app.route("/Stephenson")
