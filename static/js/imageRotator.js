@@ -10,7 +10,7 @@ function refreshImage() {
                 url: "setImageRotator/"+ $(img).attr("src").split("/").pop(),
                 success: function (result) {
                         // console.log(result);
-        		setTimeout(refreshImage, 3000);
+        		setTimeout(refreshImage, 30000);
                 }
         });
 }
