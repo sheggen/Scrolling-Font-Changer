@@ -25,7 +25,7 @@ for idx,line in enumerate(f.readlines()):
     description_line += 1
 
     if description_line == 2:
-        single_item_html += "<p><b><em>" + text + "<b><em></p>"
+        single_item_html += "<p><b><em>" + text + "</b></em></p>"
     else:
         single_item_html += "<p>" + text + "</p>"
 
