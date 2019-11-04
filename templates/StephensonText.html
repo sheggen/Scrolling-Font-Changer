@@ -15,7 +15,7 @@
 <body>
 	<div style="margin: auto; width: 100%; height:100vh; padding: 10px;">
 		{% for item in allLines.items() %}
-			<p class = "allText" id={{item[0].split(".")[0]}} style = "display: none">{{item[1]|safe}}</p>
+			<div class = "allText" id={{item[0].split(".")[0]}} style = "display: none">{{item[1]|safe}}</div>
 		{% endfor %}
 
 	</div>
