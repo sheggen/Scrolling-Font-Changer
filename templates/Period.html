@@ -1,22 +1,56 @@
 <!doctype html>
 <head>
-	<title>John G. Fee</title>
-	<script src="/static/js/jquery.js"></script>
-	<script src="/static/js/period.js"></script>
+	<title>John F. Fee</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
-
-	<style> 
-		.marquee {
-			text-align:justify;
-			word-wrap: normal;
-			font-size: 20px;
-			height: inherit;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/static/css/period.css">
 </head>
-<body style="color: #f9ef76">
-	<div style="margin: auto; width: 80%; height:100vh; padding: 10px;">		
-		
-	</div>
-</div>
+<body class="bg">
+	<div id="dialog" title="Basic Dialog"></div>
+
+	{% for image in images %}
+	<img id="image-{{loop.index}}" src="/static/period_room/{{image.file}}" title="{{image.title}}" class="target" style="top:{{image.top}}px;left:{{image.left}}px" />
+	<div id="image-{{loop.index}}-details" style="display:none">{{ image.description|safe }}</div>
+	{% endfor %}
+
+	<script src="/static/js/jquery.js"></script>
+  	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/static/js/period.js"></script>
+	<script type="text/javascript">
+	  $(function() {
+	    $( "#dialog" ).dialog({
+	      autoOpen: false,
+	      show: {
+		effect: "fade",
+		duration: 500
+	      },
+	      hide: {
+		effect: "fade",
+		duration: 500
+	      }
+	    });
+
+	    $("img").each(function(idx,img) {
+		var img = $(img);
+		var img_id = img.attr("id");
+		var img_title = img.attr("title");
+		var dlg = $( "#dialog" );
+
+		img.on("click", function() {	
+		console.log(img_id);
+		      var details = $("#" + img_id + "-details").html();
+			console.log(details);
+		      dlg.dialog("option", "title", img_title);
+		      dlg.html(details);
+
+		      var new_img = $("<img>").attr("src", img.attr("src"));
+		      new_img.attr("style", "display:block; margin:auto; width:100px;");
+		      dlg.prepend(new_img);
+		      new_img.after($("<br>"));
+
+		      dlg.dialog( "open" );
+		});
+	    });
+	  });
+	</script>
 </body>
