@@ -12,14 +12,14 @@
 	</style>
 </head>
 <body>
-<div style="height: 50px;"></div>
-<div style="margin: auto; width: 1000px;" align="center">
+<!--<div style="height: 50px;"></div>-->
+<div style="margin: auto; width: 99%; text-align: justify;">
+	<p>We are often positioned to imagine that the representation of an individual in a portrait is not a momentary snapshot of that person, but instead a rendering that captures both their essence and how they should be remembered. However, older or younger, formally dressed versus informal, surrounded by objects or in front of a barren wall, all these features impact the ways we relate to the portraits themselves. The portrait of Fee on the right was painted during his lifetime while the one on the left was painted 14 years after his death. Use the touch screen mounted here or another device to share your impressions of these two different portraits of Fee. Come back later to see all relevant comments added to the list.</p>	
 	<div style="width: 50%; float:left; overflow: hidden;">
 		<div style="width: 100%; margin-bottom: 20px;" align = 'center'>
 			<img src="/static/images/youngfee.jpeg" width = 300px style="clear:both;"/>
 		</div>
-		<label for="youngFeeling" style="font-size: 18px; padding-right: 10px;">Describe this image: </label>
-		<input type="text" id="youngFeeling" style="height: 35px; border-radius: 7px; font-size: 18px;"></input>
+		<input type="text" id="youngFeeling" style="margin-left: 21%; height: 35px; width: 50%; border-radius: 7px; font-size: 18px;" placeholder="Describe the image above"></input>
 		<button type="button"
 						onclick="sendYoungWord()"
 						style="background-color: #4CAF50;
@@ -37,8 +37,7 @@
 		<div style="width: 100%; margin-bottom: 20px;" align = 'center'>
 			<img src="/static/images/oldfee.jpeg" width = 300px  style="clear:both;"/>
 		</div>
-		<label for="oldFeeling" style="font-size: 18px; padding-right: 10px;">Describe this image: </label>
-		<input type="text" id="oldFeeling" style="height: 35px; border-radius: 7px; font-size: 18px;"></input>
+		<input type="text" id="oldFeeling" style="margin-left: 21%; height: 35px; width: 50%; border-radius: 7px; font-size: 18px;" placeholder="Describe the image above"></input>
 		<button type="button"
 						onclick="sendOldWord()"
 						style="background-color: #4CAF50;
@@ -53,34 +52,41 @@
 		</button>
 	</div>
 </div>
-<div style="width: 100%;" align="center">
-	<label for="fs" style="font-size: 20px; padding-right: 10px;">Select a font: </label>
-
-	<select id="fs" onchange="sendFont(this)" style="height: 35px; font-size: 20px; margin-left: 58px; margin-top: 20px; width: 196px;">
-		<option value="canada_1500regular" {% if font == "canada_1500regular" %}selected{% endif %}>Canada 1500</option>
-		<option value="highway_gothicregular" {% if font == "highway_gothicregular" %}selected{% endif %}>Highway Gothic</option>
-		<option value="opendyslexicregular" {% if font == "opendyslexicregular" %}selected{% endif %}>Open Dyslexic</option>
-		<option value="chicagoflfregular" {% if font == "chicagoflfregular" %}selected{% endif %}>Chicago</option>
-		<option value="fee_40regular" {% if font == "fee_40regular" %}selected{% endif %}>John G. Fee</option>
-		<option value="andika_new_basicregular" {% if font == "andika_new_basicregular" %}selected{% endif %}>Andika</option>
-		<option value="comic_sans_ms" {% if font == "comic_sans_ms" %}selected{% endif %}>Comic Sans MS</option>
-		<option value="Garamond" {% if font == "Garamond" %}selected{% endif %}>Garamond</option>
-		<option value="Tahoma" {% if font == "Tahome" %}selected{% endif %}>Tahoma</option>
-
-	</select>	
+<div style="margin: auto; width: 99%; text-align: justify;">
+	<p>The typeface that you are reading is also left to the viewer’s discretion. Typography often goes overlooked as we typically employ typefaces determined by academic standards or word processing default settings–where many of the most common typefaces are easily adaptable to Western languages, but less so indigenous and non-Latin alphabet languages, and readers of differing visual processing ability. It is itself a curatorial decision that may impact the ways we relate to the content of the type. Through this interface you can choose the typeface that is being viewed in this proposal from a range of typefaces that include ones that are prevalent and designs intended to address specific deficits in the more widely used typefaces. In addition, upon making your choice, all of the digital text throughout the exhibition will adapt to your selected typeface. The printed text in the exhibition uses the Andika font.</p>
+	<div style="width: 100%;" align="center">
+		<label for="fs" style="font-size: 20px; padding-right: 10px;">Select a font: </label>
+	
+		<select id="fs" onchange="sendFont(this)" style="height: 35px; font-size: 20px; margin-left: 58px; margin-top: 20px; width: 196px;">
+			<option value="Garamond" {% if font == "Garamond" %}selected{% endif %}>Garamond</option>
+			<option value="Tahoma" {% if font == "Tahoma" %}selected{% endif %}>Tahoma</option>
+			<option value="Times New Roman" {% if font == "Times New Roman" %}selected{% endif %}>Times New Roman</option>
+			<option value="Arial" {% if font == "Arial" %}selected{% endif %}>Arial</option>
+			<option value="chicagoflfregular" {% if font == "chicagoflfregular" %}selected{% endif %}>Chicago</option>
+			<option value="fee_40regular" {% if font == "fee_40regular" %}selected{% endif %}>John G. Fee</option>
+			<option value="andika_new_basicregular" {% if font == "andika_new_basicregular" %}selected{% endif %}>Andika</option>
+			<option value="comic_sans_ms" {% if font == "comic_sans_ms" %}selected{% endif %}>Comic Sans MS</option>
+			<option value="canada_1500regular" {% if font == "canada_1500regular" %}selected{% endif %}>Canada 1500</option>
+			<option value="opendyslexicaltaregular" {% if font == "opendyslexicaltaregular" %}selected{% endif %}>Open Dyslexic</option>
+			<option value="highway_gothicregular" {% if font == "highway_gothicregular" %}selected{% endif %}>Highway Gothic</option>
+			<option value="Baskerville" {% if font == "Baskerville" %}selected{% endif %}>Baskerville</option>
+			
+		</select>	
+	</div>
+	<div style="width: 100%;margin-top: 20px;" align="center">
+		<button id="muteButton"
+						type="button"
+						onclick="muteDisplay()"
+						style="background-color: #4CAF50;
+										color: #ffffff;
+										border-color: #4CAF50;
+										height: 40px;
+										border-radius: 7px;
+										vertical-align: top;
+										font-size: 15px;
+										font-family: inherit;">
+			Show/Hide the Text
+		</button>
+	</div>
 </div>
-<div style="width: 100%;margin-top: 20px;" align="center">
-	<button id="muteButton"
-					type="button"
-					onclick="muteDisplay()"
-					style="background-color: #4CAF50;
-									color: #ffffff;
-									border-color: #4CAF50;
-									height: 40px;
-									border-radius: 7px;
-									vertical-align: top;
-									font-size: 15px;
-									font-family: inherit;">
-		Toggle the Display
-	</button>
-</div>
+	

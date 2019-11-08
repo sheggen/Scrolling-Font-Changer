@@ -221,11 +221,22 @@
 
 @font-face {
     font-family: 'Garamond';
-    src: url('/static/fonts/Garamond.ttf') format('truetype'),
-    	 url('/static/fonts/Garamonb.ttf') format('truetype'),
-	 url('/static/fonts/Garamoni.ttf') format('truetype');
+    src: url('/static/fonts/GARA.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 
+@font-face {
+    font-family: 'Tahoma';
+    src: url('/static/fonts/Tahoma.ttf') format('truetype');
+    font-weight: normal;    
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/static/fonts/Baskerville.ttc') format('truetype');
+    font-weight: normal;    
+    font-style: normal;
+}

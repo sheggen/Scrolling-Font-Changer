@@ -9,29 +9,27 @@
 		.marquee {
 			text-align:justify;
 			word-wrap: normal;
-			font-size: 20px;
+			font-size:40px;
 			height: inherit;
 		}
 	</style>
 </head>
-<body style="color: #f9ef76">
-	<div style="margin: auto; width: 80%; height:100vh; padding: 10px;">		
-		<div style="width:100%;
-								float:left;
-								overflow: hidden;
-								padding-right: 200px;
-								height: inherit;
-								{% if age != "young" %}display: none;{% endif %}">
+<body style="color: #664152">
+	<div style="width: 99%; height:100vh; padding: 10px; margin-right: 10px;">		
+		<div style="	width:100%;
+				float:left;
+				overflow: hidden;
+				height: inherit;
+				{% if age != "young" %}display: none;{% endif %}">
 			<div id="marquee_area_young" style='height: inherit;'>
 				<marquee id="marquee_text_young" class="marquee" behavior="scroll" direction="up" scrollamount="5" ></marquee>
 			</div>
 		</div>		
 		
-		<div style="width: 100%;
-								margin-left: 50px;
-								overflow: hidden;
-								height: inherit;
-								{% if age != "old" %}display: none;{% endif %}">
+		<div style="	width: 100%; 
+				overflow: hidden; 
+				height: inherit;
+				{% if age != "old" %}display: none;{% endif %}">
 			<div id="marquee_area_old" style='height: inherit;'>
 				<marquee id="marquee_text_old" class="marquee" behavior="scroll" direction="up" scrollamount="5" ></marquee>
 			</div>
