@@ -52,12 +52,12 @@ function refreshFontFS() {
                         } else {
                                 result = "Arial";
                         }
-                        setTimeout(refreshFontFS, 3000);
+                        setTimeout(refreshFontFS, 1000);
 		}
 	})
 }
 // on document load, set the selected font to what's in the txt
 // on regular intervals, check the font and set it in this ui.
 $(document).ready(function () {
-        setTimeout(refreshFontFS, 1000);
+        setTimeout(refreshFontFS, 1);
 })

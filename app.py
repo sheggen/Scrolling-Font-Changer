@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-import threading, time
+import threading, time, json
 
 app = Flask(__name__)
 
@@ -8,65 +8,13 @@ app.jinja_env.lstrip_blocks = True
 
 @app.route('/Period')
 def Period():
-    images = [
-        {   "title":  "Cake Tin",
-            "file": "caketin.png",
-            "description": "Cake Tin<br>Regal Ware, Inc.<br>ca. 1965<br>Aluminum and bakelite<br>On loan from private collection",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Coffee Pot",
-            "file": "coffeepot.png",
-            "description": "Coffee Pot<br>Wear Ever<br>20th cen.<br>Berea College Art Collection",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Credenza",
-            "file": "credenza.png",
-            "description": "Credenza<br>Knoll Studios<br>1966<br>On loan from Hutchins Library",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Diana Camera",
-            "file": "camera.png",
-            "description": "Diana Camera",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Bantam Sofa",
-            "file": "couch.png",
-            "description": "Bantam Sofa<br>Design Within Reach<br>Mid 20th cen./2010<br>Hardwood frame; wire springs; polyurethane foam; stained walnut legs; fabric upholstery.<br>On loan from private collection",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Light Fixture",
-            "file": "light.png",
-            "description": "Light Fixture<br>Original Hutchins Library Recreation (1966)",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Portrait",
-            "file": "portrait.png",
-            "description": "Portrait of Francis Hutchins (1902-1988)<br>Thomas Fern<br>1966<br>Oil on Canvas",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Railing",
-            "file": "railing.png",
-            "description": "Railing<br>Original Hutchins Library Recreation (1966)",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Side Table",
-            "file": "table.png",
-            "description": "Side Table<br>1973<br>On loan from the Art Department",
-            "top": "100",
-            "left": "100" },
-        {   "title":  "Television",
-            "file": "television.png",
-            "description": "Television<br>on loan from private collection",
-            "top": "100",
-            "left": "100" },
-    ]
+    images = json.load(open('static/period_room/image_details.py', 'rb'))
     return render_template("Period.html",images=images)
-
 
 # PAGE ROUTES
 @app.route('/Fee/young')
 def FeeYoung():
-	return render_template("Fee.html", age = "young")
+    return render_template("Fee.html", age = "young")
 
 @app.route('/Fee/old')
 def FeeOld():

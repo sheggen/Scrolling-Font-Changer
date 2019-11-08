@@ -6,51 +6,56 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/period.css">
 </head>
 <body class="bg">
+    <img src="/static/period_room/period.png" usemap="#periodmap" style="margin:auto;display:block;height:100vh" />
 	<div id="dialog" title="Basic Dialog"></div>
 
+	<map name="periodmap">
 	{% for image in images %}
-	<img id="image-{{loop.index}}" src="/static/period_room/{{image.file}}" title="{{image.title}}" class="target" style="top:{{image.top}}px;left:{{image.left}}px" />
+    <area shape="{{ image.shape }}" coords="{{ image.coords }}" href="javascript:open_dialog({{loop.index}},'{{image.file}}','{{image.title}}')" title="{{ image.title }}" alt="{{ image.title }}">
+	{% endfor %}
+	</map> 
+	{% for image in images %}
 	<div id="image-{{loop.index}}-details" style="display:none">{{ image.description|safe }}</div>
 	{% endfor %}
 
 	<script src="/static/js/jquery.js"></script>
   	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script src="/static/js/jquery.rwdImageMaps.min.js"></script>
 	<script src="/static/js/period.js"></script>
 	<script type="text/javascript">
-	  $(function() {
-	    $( "#dialog" ).dialog({
-	      autoOpen: false,
-	      show: {
-		effect: "fade",
-		duration: 500
-	      },
-	      hide: {
-		effect: "fade",
-		duration: 500
-	      }
-	    });
+		function open_dialog(id, img_src, img_title) {
+			var details = $("#image-" + id + "-details").html();
+            var dlg = $("#dialog");
 
-	    $("img").each(function(idx,img) {
-		var img = $(img);
-		var img_id = img.attr("id");
-		var img_title = img.attr("title");
-		var dlg = $( "#dialog" );
+			dlg.dialog("option", "title", img_title);
+			dlg.html(details);
 
-		img.on("click", function() {	
-		console.log(img_id);
-		      var details = $("#" + img_id + "-details").html();
-			console.log(details);
-		      dlg.dialog("option", "title", img_title);
-		      dlg.html(details);
+		    var new_img = $("<img>").attr("src", "/static/period_room/" + img_src);
+		    new_img.attr("style", "display:block; margin:auto; width:200px;");
+		    dlg.prepend(new_img);
+		    new_img.after($("<br>"));
 
-		      var new_img = $("<img>").attr("src", img.attr("src"));
-		      new_img.attr("style", "display:block; margin:auto; width:100px;");
-		      dlg.prepend(new_img);
-		      new_img.after($("<br>"));
+		    dlg.dialog( "open" );
+		}
 
-		      dlg.dialog( "open" );
-		});
-	    });
-	  });
+      $(function() {
+        $( "#dialog" ).dialog({
+          autoOpen: false,
+          show: {
+            effect: "fade",
+            duration: 500
+          },
+          hide: {
+            effect: "fade",
+            duration: 500
+          },
+          width: 600,
+        });
+      });
+
+    $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps();
+    });
+        
 	</script>
 </body>

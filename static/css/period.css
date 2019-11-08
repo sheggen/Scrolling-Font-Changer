@@ -1,31 +1,4 @@
-.marquee {
-	text-align:justify;
-	word-wrap: normal;
-	font-size: 20px;
-	height: inherit;
-}
 body, html {
   height: 100%;
   background-color: white;
-}
-
-.bg {
-  margin:0px;
-  padding: 0px;
-
-  /* The image used */
-  background-image: url("/static/period_room/period.png");
-
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.target {
-  position: absolute;
-  width: 100px;
 }

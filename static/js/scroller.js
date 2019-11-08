@@ -1,5 +1,5 @@
 lastWords = "";
-selectedFont = "Arial";
+selectedFont = "Andika";
 
 function getWords() {
 	//console.log("Calling getWords")
@@ -28,7 +28,7 @@ function getWords() {
 			}
 			lastWords = words;
 			$(".marquee").css("font-family", font);
-			setTimeout(getWords, 3*1000);
+			setTimeout(getWords, 100);
 		}
 	});
 };

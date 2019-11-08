@@ -7,9 +7,18 @@ function refreshFont() {
 			if (result != "null") {
 				$("body").css("font-family", result);
 			} else {
-				$("body").css("font-family", "Arial");
+				$("body").css("font-family", "Andika");
 			}
-			setTimeout(refreshFont, 3000);
+			setTimeout(refreshFont, 500);
+			setTimeout(returnFromFee, 6000);
 		}
 	});
+}
+
+function returnFromFee() {
+	console.log("Back from Fee")
+	if ($("body").css("font-family") == "fee_40regular" {
+		console.log("Back to Andika");
+		$("body").css("font-family", "Andika");
+	}
 }
