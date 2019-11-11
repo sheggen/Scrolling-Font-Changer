@@ -2,23 +2,28 @@ function refreshFont() {
   $.ajax({
 		url: "/getFont",
 		success: function(result) {
-			console.log("We did it dude!", result);
 			// change selected font
 			if (result != "null") {
 				$("body").css("font-family", result);
-			} else {
-				$("body").css("font-family", "Andika");
 			}
-			setTimeout(refreshFont, 500);
-			setTimeout(returnFromFee, 6000);
+			setTimeout(refreshFont, 1000);
 		}
 	});
 }
 
 function returnFromFee() {
-	console.log("Back from Fee")
-	if ($("body").css("font-family") == "fee_40regular" {
+	if ($("body").css("font-family") == "fee_40regular") {
 		console.log("Back to Andika");
-		$("body").css("font-family", "Andika");
+		$("body").css("font-family", "andika_new_basicregular");
+        	$.ajax({
+                	url: "/sendFont/andika_new_basicregular",
+	                success: function(result) {
+                           console.log("We did it!" + result);
+                	}
+        	})
 	}
+	setTimeout(returnFromFee, 60000);
 }
+
+setTimeout(returnFromFee, 1);
+

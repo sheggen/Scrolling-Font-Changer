@@ -36,7 +36,7 @@ function muteDisplay() {
         $.ajax({
 		url: "/muteDisplay",
 		success: function(result) {
-			console.log("We "+result+"ed it!");
+			// console.log("We "+result+"ed it!");
 		}
 	})
 }
@@ -45,14 +45,15 @@ function refreshFontFS() {
         $.ajax({
 		url: "/getFont",
 		success: function(result) {
-			// console.log("We did it dude!", result);
+			console.log("We did it dude!", result);
                         // change selected font
                         if (result != "null") {
                                 $("#fs").val(result).change();
                         } else {
-                                result = "Arial";
+                                result = "andika_new_basicregular";
                         }
-                        setTimeout(refreshFontFS, 1000);
+		        $("body").css("font-family", result);
+			setTimeout(refreshFontFS, 1000);
 		}
 	})
 }
