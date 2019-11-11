@@ -35,6 +35,11 @@ def FeeTextOld():
 def FeeTextYoung():
 	return render_template("FeeTextYoung.html")
 
+@app.route('/Hutchins')
+def Hutchins():
+	return render_template("Hutchins.html")
+
+
 @app.route("/Tanner")
 def Tanner():
 	return render_template('Tanner.html')
