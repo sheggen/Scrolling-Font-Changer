@@ -14,8 +14,10 @@
     <area shape="{{ image.shape }}" coords="{{ image.coords }}" href="javascript:open_dialog({{loop.index}},'{{image.file}}','{{image.title}}')" title="{{ image.title }}" alt="{{ image.title }}">
 	{% endfor %}
 	</map> 
+
 	{% for image in images %}
 	<div id="image-{{loop.index}}-details" style="display:none">{{ image.description|safe }}</div>
+    <img style="display:none" src="/static/period_room/{{ image.file }}" />
 	{% endfor %}
 
 	<script src="/static/js/jquery.js"></script>
@@ -27,16 +29,18 @@
 			var details = $("#image-" + id + "-details").html();
             var dlg = $("#dialog");
 
-			dlg.dialog("option", "title", img_title);
-			dlg.html(details);
+            dlg.dialog("option", "title", img_title);
+            dlg.html(details);
 
-		    var new_img = $("<img>").attr("src", "/static/period_room/" + img_src);
-		    new_img.attr("style", "display:block; margin:auto; width:200px;");
-		    dlg.prepend(new_img);
-		    new_img.after($("<br>"));
+            var new_img = $("<img>").attr("src", "/static/period_room/" + img_src);
+            new_img.attr("style", "display:block; margin:auto; width:200px;");
+            dlg.prepend(new_img);
+            new_img.after($("<br>"));
 
-		    dlg.dialog( "open" );
-		}
+            // Why does this only work the second time through, whether it is before or after open?
+            dlg.dialog("option", "position", {"my": "center", "at": "center", "of": window })
+            dlg.dialog( "open" );
+    }
 
       $(function() {
         $( "#dialog" ).dialog({
