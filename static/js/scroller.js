@@ -1,5 +1,5 @@
 lastWords = "";
-selectedFont = "Andika";
+selectedFont = "andika";
 
 function getWords() {
 	//console.log("Calling getWords")
@@ -10,7 +10,7 @@ function getWords() {
 			font = result.split("||")[1];
 			words = result.split("||")[2].replace(/\n/g, " ");
 			//console.log(mute);
-			//console.log(result);
+			console.log(result + ","+font);
 			
 			// Mute display, or not
 			if (mute == 'true') {
@@ -27,8 +27,8 @@ function getWords() {
 				add_marquee(font, words);
 			}
 			lastWords = words;
-			$(".marquee").css("font-family", font);
-			setTimeout(getWords, 100);
+			$("body").css("font-family", font);
+			setTimeout(getWords, 500);
 		}
 	});
 };
