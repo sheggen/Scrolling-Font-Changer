@@ -5,7 +5,11 @@ function approve(el) {
 		success: function (result) {
 			console.log(result + " approved");
 			window.location.replace('vetWords');
-		}
+		}, 
+		error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                        location.reload(true);
+                }
 	});
 }
 

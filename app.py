@@ -27,11 +27,11 @@ def FeeAdd():
 	f.close()
 	return render_template("FeeAdd.html", font = font)
 
-@app.route('/Fee/text/old')
+@app.route('/Fee/faces')
 def FeeTextOld():
 	return render_template("FeeTextOld.html")
 
-@app.route('/Fee/text/young')
+@app.route('/Fee/text')
 def FeeTextYoung():
 	return render_template("FeeTextYoung.html")
 
@@ -173,18 +173,24 @@ def sendWord(age, word):
 
 @app.route('/sendFont/<font>')
 def sendFont(font):
-	f = open('currentFont.txt', 'w')
-	f.write(font)
-	f.close()
-	return font
+        f = open('currentFont.txt', 'r')
+        cFont = f.read()
+        f.close()
+        print("Changing font to ", font, "||", cFont)
+        if cFont != font:
+            print("Writing new font ", font)
+            f = open('currentFont.txt', 'w')
+            f.write(font)
+            f.close()
+        return font
 
 @app.route('/getFont')
 def getFont():
-	f = open('currentFont.txt', 'r')
-	font = f.read()
-	print(font)
-	f.close()
-	return font
+        f = open('currentFont.txt', 'r')
+        font = f.read()
+        print("Sending font: ", font)
+        f.close()
+        return font
 
 
 def updateMuteState():

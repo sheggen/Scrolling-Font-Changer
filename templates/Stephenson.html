@@ -15,8 +15,11 @@
 			max-height: 100%;
 		}
 		body {
-			background: url("static/images/carpet_tiny.jpg");
-			/*background-color: #664152;*/
+			background: url("/static/images/carpet_meg_4.jpg");
+			background-repeat: no-repeat;
+			background-size: 2200px 1800px;
+			margin: 0px;
+
 		}
 	</style>
 </head>
@@ -25,5 +28,5 @@
 		{% for img in imgs %}	
 			<img src="/{{img}}" class="imgRotator" style = "display: none;">
 		{% endfor %}
-</div>
+	</div>
 </body>

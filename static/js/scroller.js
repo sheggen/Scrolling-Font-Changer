@@ -28,8 +28,12 @@ function getWords() {
 			}
 			lastWords = words;
 			$("body").css("font-family", font);
-			setTimeout(getWords, 500);
-		}
+			setTimeout(getWords, 10000);
+		}, 
+		error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                        location.reload(true);
+                }
 	});
 };
 

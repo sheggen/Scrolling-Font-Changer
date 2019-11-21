@@ -1,14 +1,14 @@
-young: To provide an educational opportunity for students of all races, primarily from Appalachia, who have great promise and limited economic resources. To offer a high-quality liberal arts education that engages students as they pursue their personal, academic, and professional goals. To stimulate understanding of the Christian faith and its many expressions and to emphasize the Christian ethic and the motive of service to others.:|:
-old: To promote learning and serving in community through the student Labor Program, honoring the dignity and utility of all work, mental and manual, and taking pride in work well done. To assert the kinship of all people and to provide interracial education with a particular emphasis on understanding and equality among blacks and whites as a foundation for building community among all peoples of the earth. To create a democratic community dedicated to education and gender equality. To maintain a residential campus and to encourage in all community members a way of life characterized by mindful and sustainable living, health and wellness, zest for learning, high personal standards, and a concern for the welfare of others. To engage Appalachian communities, families, and students in partnership for mutual learning, growth, and service.:|:
-young: Imagination!:|:
-old: Grandpa:|:
-young: Brant Price:|:
-young: Grouch:|:
-young: Ready to work:|:
-young: smooth:|:
-young: classy:|:
-old: very classy:|:
-young: Dapper:|:
-old: Beardy:|:
-young: Beardless:|:
-young: Newest:|:
+young: Awful young:|:
+young: Intense, intent, looking towards the future:|:
+old: Serious, wizened, thoughtful, inquisitive:|:
+young: Frozen:|:
+old: Stately:|:
+young: ghostly:|:
+old: tense:|:
+young: This portrait feels distant, and less personal than the older portrait of Fee. Based on the paleness of his skin, he almost seems like a blank canvas, ready for a life of fighting. This portrait seems more like a testament to the pre-Abolitionist Fee - before he began his fight for African American freedom.:|:
+old: This portrait feels more like one of a man that has already lived a full life; tanned skin, wrinkled features, and a look that seems to communicate a life or fighting and loss. He seems very prestigious, but not in a necessarily negative way. This portrait makes Fee look like he has earned his prestige.:|:
+young: This man looks focused on the task at hand. Unerringly determined, though maybe without a clear path to proceed. It also appears a bit abstracted, not as if it is an actual person, but an idea. The direct eye contact gives an impression of personal attention, while the nondescript features serve as a (not completely successful) universalizing feature. An embodiment of the gaze.:|:
+old: This man seems nearly dismissive. He is sure of himself at the detriment of pushing others away. He is too focused on power.:|:
+young: in here he appears with blue eyes while in the other one they're brown:|:
+young: I feel threatened:|:
+old: Still feel threatened:|:

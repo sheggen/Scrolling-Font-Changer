@@ -45,15 +45,19 @@ function refreshFontFS() {
         $.ajax({
 		url: "/getFont",
 		success: function(result) {
-			console.log("We did it dude!", result);
+			console.log("Got Font: ", result);
                         // change selected font
-                        if (result != "null") {
-                                $("#fs").val(result).change();
-                        } else {
+                        if (result == "null") {
+				console.log("IT was NULL");
                                 result = "andika_new_basicregular";
-                        }
+			}
+                        $("#fs").val(result).change();
 		        $("body").css("font-family", result);
-			setTimeout(refreshFontFS, 1000);
+			setTimeout(refreshFontFS, 10000);
+		}, 
+		error: function(xhr, status, error) {
+			console.log(xhr.responseText);
+			location.reload(true);
 		}
 	})
 }

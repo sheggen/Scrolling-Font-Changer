@@ -6,8 +6,12 @@ function refreshFont() {
 			if (result != "null") {
 				$("body").css("font-family", result);
 			}
-			setTimeout(refreshFont, 1000);
-		}
+			setTimeout(refreshFont, 10000);
+		},
+	  	error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                        location.reload(true);
+                }
 	});
 }
 
@@ -18,12 +22,26 @@ function returnFromFee() {
         	$.ajax({
                 	url: "/sendFont/andika_new_basicregular",
 	                success: function(result) {
-                           console.log("We did it!" + result);
+                           console.log("Fee changed to: " + result);
+                	}, 
+			error: function(xhr, status, error) {
+                        	console.log(xhr.responseText);
+                 	       location.reload(true);
                 	}
         	})
 	}
-	setTimeout(returnFromFee, 60000);
 }
 
-setTimeout(returnFromFee, 1);
+function checkForFee() {
+        if ($("body").css("font-family") == "fee_40regular") {
+		console.log("It was Fee!");
+		setTimeout(returnFromFee, 60000);
+	} else {
+		console.log("Not fee");
+	}
+	setTimeout(checkForFee, 10000);
 
+}
+
+setTimeout(checkForFee, 1);
+setTimeout(refreshFont, 1);

@@ -11,6 +11,10 @@ function refreshImage() {
                 success: function (result) {
                         // console.log(result);
         		setTimeout(refreshImage, 30000);
+                }, 
+		error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                        location.reload(true);
                 }
         });
 }
